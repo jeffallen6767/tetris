@@ -51,12 +51,8 @@ var
         "initLayout": function(container) {
           console.log("initLayout", container);
           var 
-            content = [],
-            layout = {};
-          content.push('<div class="background">');
-          
-          content.push('</div>');
-          container.innerHTML = content.join('');
+            layout = [];
+
           return layout;
         },
         "runApp": function() {
