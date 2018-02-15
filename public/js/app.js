@@ -36,14 +36,28 @@ var
         },
         "setup": function() {
           var 
-            app = inst.state.app,
+            state = inst.state,
+            app = state.app,
+            layout,
             x,y,z;
+          console.log("state", state);
           // TODO: create stuff once:
-          
+          layout = inst.initLayout(state.dom.content);
           // set state of animation
           app.animationState = {
-            
+            'layout': layout
           };
+        },
+        "initLayout": function(container) {
+          console.log("initLayout", container);
+          var 
+            content = [],
+            layout = {};
+          content.push('<div class="background">');
+          
+          content.push('</div>');
+          container.innerHTML = content.join('');
+          return layout;
         },
         "runApp": function() {
           var 
